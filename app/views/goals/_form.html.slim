@@ -1,0 +1,19 @@
+= form_for [@goal] do |f|
+  = error_messages_for f.object
+
+  .field
+    = f.label :name, class: 'label'
+    .control= f.text_field :name, placeholder: f.object.class.human_attribute_name(:name), class: 'input'
+
+  .field.is-grouped
+    p.control
+      = submit_tag t('.save'), class: 'button is-primary', data: {disable_with: "Saving..."}
+      = link_to "Cancel", [:goals], class: 'button is-text'
+
+
+    p.control.has-text-right
+      - if f.object.persisted? # and policy(f.object).destroy?
+        = link_to [f.object], method: :delete, class: 'button is-danger is-inverted', data: {confirm: t('.destroy.title')} do
+          i.fa.fa-trash
+          = t('.destroy.button')
+

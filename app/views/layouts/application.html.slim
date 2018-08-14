@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    title Personal Dashboard
+
+    = csrf_meta_tags
+
+    meta charset='utf-8' /
+    meta content='IE=Edge,chrome=1' httpequiv='X-UA-Compatible' /
+    meta content='width=device-width initial-scale=1.0' name='viewport' /
+
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
+    script src="https://use.fontawesome.com/4d210570ed.js"
+
+  body class=body_class id=body_id
+
+    nav.navbar.has-shadow role='navigation' aria_label='main navitation'
+
+      .container
+        .navbar-brand
+          a.navbar-item href="/"
+            ' Booster Stage Launchpad
+          button.button.navbar-burger data-target="navMenu"
+            span
+            span
+            span
+        .navbar-menu#navMenu
+          .navbar-end
+            = link_to "My Goals", goals_path, class: ['navbar-item', 'is-tab', active_if(controller?('goals'))]
+
+    - flash.select{|k,v| %w(notice alert).include?(k)}.each do |type, message|
+      section.section
+        .container
+          div.notification class=flash_class(type)
+            button.delete
+            = raw message
+
+    .container
+      section.section= yield
+
+    footer.footer
+      .container
+        ' Booster Stage
+        ' &copy;
+        = Date.today.year
+
+
+
