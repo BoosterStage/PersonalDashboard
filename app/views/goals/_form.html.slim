@@ -3,7 +3,11 @@
 
   .field
     = f.label :name, class: 'label'
-    .control= f.text_field :name, placeholder: f.object.class.human_attribute_name(:name), class: 'input'
+    .control= f.text_field :name, placeholder: f.object.class.human_attribute_name(:name), class: 'input', required: true
+
+    .field
+      = f.label :benchmark, class: 'label'
+      .control= f.number_field :benchmark, placeholder: f.object.class.human_attribute_name(:benchmark), class: 'input', required: true
 
   .field.is-grouped
     p.control
@@ -16,4 +20,3 @@
         = link_to [f.object], method: :delete, class: 'button is-danger is-inverted', data: {confirm: t('.destroy.title')} do
           i.fa.fa-trash
           = t('.destroy.button')
-
