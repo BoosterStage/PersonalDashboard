@@ -3,5 +3,5 @@
 Rails.application.routes.draw do
   resources :goals
   resources :goal_progresses
-  root to: 'goals#index'
+  root to: 'dashboard#index'
 end
