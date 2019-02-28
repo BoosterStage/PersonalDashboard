@@ -23,7 +23,15 @@ The home page should show a dashboard that lists each goal. Next to each goal it
 
 I want to create a goal to do 20 push-ups every day. Each day I'll go to my personal dashboard and click on my goal. It'll ask me how many push-ups I did that day, and I'll enter my number. After one week, my Dashboard page might look like this:
 
-| Goal | M  | T  | W  | T  | F  | S  | S  | 
-| -- | -- | -- | -- | -- | -- | -- | -- |
-| 20 Push-ups per day | 12 | 15 | - | 20 | 30 | 20 | 20 |
+| Goal                | M   | T   | W   | T   | F   | S   | S   |
+| ------------------- | --- | --- | --- | --- | --- | --- | --- |
+| 20 Push-ups per day | 12  | 15  | -   | 20  | 30  | 20  | 20  |
 
+## Setup
+
+To set up this project:
+
+1. Clone the repository.
+2. Run `./bin/setup` to install dependencies and bootstrap the database.
+3. Run `rake test` to run the test suite.
+4. Run `rails server`.
