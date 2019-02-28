@@ -1,0 +1,16 @@
+p#notice = notice
+
+p
+  strong Goal:
+  = @goal_progress.goal.name
+p
+  strong achieve_at:
+  = @goal_progress.achieve_at
+
+p
+  strong achieve_at:
+  = @goal_progress.achieve
+
+=> link_to 'Edit', edit_goal_progress_path(@goal_progress)
+'|
+=< link_to 'Back', goal_progresses_path
