@@ -8,6 +8,17 @@ Each day, user can create a Progress record. The progress record would belong to
 
 The home page should show a dashboard that lists each goal. Next to each goal it should list each of the user's progress records, with the most recent first. If the progress met or exceeded the goal, then it should print the number in green, otherwise it should print the number in red.
 
+## Requirements
+1. The user can create one or more goals.
+2. The user can record progress toward that goal each day.
+   * The "new progress" screen should allow them to select the goal and put in a date. 
+3. The dashboard displays a table with the past seven days in reverse order. 
+   * Each goal is shown on a separate row.
+   * The progress for each day is showin in the appropriate column for that day.
+   * If there's no progress for that day, display a dash (-).
+   * If the goal is met or exceeded, show the goal in green text. Otherwise, show the goal in red. 
+4. User authentication is NOT required.
+
 ## Example:
 
 I want to create a goal to do 20 push-ups every day. Each day I'll go to my personal dashboard and click on my goal. It'll ask me how many push-ups I did that day, and I'll enter my number. After one week, my Dashboard page might look like this:
@@ -15,8 +26,4 @@ I want to create a goal to do 20 push-ups every day. Each day I'll go to my pers
 | Goal | M  | T  | W  | T  | F  | S  | S  | 
 | -- | -- | -- | -- | -- | -- | -- | -- |
 | 20 Push-ups per day | 12 | 15 | - | 20 | 30 | 20 | 20 |
-
-## User Authentication
-
-User authentication is not required for this simple app.
 
