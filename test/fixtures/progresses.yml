@@ -2,10 +2,10 @@
 
 one:
   goal: one
-  points: 1.5
-  entry_date: 2019-03-07
+  points: 2
+  entry_date: 2019-03-06
 
 two:
   goal: two
-  points: 1.5
+  points: 3
   entry_date: 2019-03-07

@@ -7,7 +7,7 @@ class GoalsController < ApplicationController
   # GET /goals
   # GET /goals.json
   def index
-    @goals = Goal.all
+    @goals = Goal.includes(:progresses).all
   end
 
   # GET /goals/1
@@ -71,6 +71,6 @@ class GoalsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def goal_params
-    params.require(:goal).permit(:name)
+    params.require(:goal).permit(:name, :benchmark)
   end
 end

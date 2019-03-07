@@ -7,12 +7,13 @@
           li = message
 
   .field
-    = f.label :goal
-    = f.text_field :goal
+    = f.label :goal, class: 'label'
+    
+    .control= f.collection_select :goal_id, Goal.order(:name), :id, :name, {}, { class: 'input' }
   .field
-    = f.label :points
-    = f.text_field :points
+    = f.label :points, class: 'label'
+    .control= f.number_field :points, placeholder: f.object.class.human_attribute_name(:points), class: 'input', step: :any
   .field
-    = f.label :entry_date
-    = f.date_select :entry_date
+    = f.label :entry_date, class: 'label'
+    .control= f.date_field :entry_date, placeholder: f.object.class.human_attribute_name(:entry_date), class: 'input'
   .actions = f.submit

@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: 20 Push-ups per day
+  benchmark: 20
 
 two:
-  name: MyString
+  name: Run 10cm per day
+  benchmark: 10
