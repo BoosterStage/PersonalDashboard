@@ -1,0 +1,25 @@
+= form_for [@goal_progress] do |f|
+  = error_messages_for f.object
+
+  .field
+    = f.label :goal, class: 'label'
+    .control= f.collection_select(:goal_id, Goal.all, :id, :name)
+
+  .field
+    = f.label :achieve_at, class: 'label'
+    .control= f.date_field :achieve_at, placeholder: f.object.class.human_attribute_name(:achieve_at), class: 'input', required: true
+
+  .field
+    = f.label :achieve, class: 'label'
+    .control= f.number_field :achieve, placeholder: f.object.class.human_attribute_name(:achieve), class: 'input', required: true
+
+  .field.is-grouped
+    p.control
+      = submit_tag t('.save'), class: 'button is-primary', data: {disable_with: "Saving..."}
+      = link_to "Cancel", [:goal_progresses], class: 'button is-text'
+
+    p.control.has-text-right
+      - if f.object.persisted? # and policy(f.object).destroy?
+        = link_to [f.object], method: :delete, class: 'button is-danger is-inverted', data: {confirm: t('.destroy.title')} do
+          i.fa.fa-trash
+          = t('.destroy.button')

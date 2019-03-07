@@ -3,6 +3,9 @@ p#notice = notice
 p
   strong Name:
   = @goal.name
+p
+  strong Benchmark:
+  = @goal.benchmark
 
 => link_to 'Edit', edit_goal_path(@goal)
 '|

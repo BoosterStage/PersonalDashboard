@@ -29,6 +29,8 @@ html
         .navbar-menu#navMenu
           .navbar-end
             = link_to "My Goals", goals_path, class: ['navbar-item', 'is-tab', active_if(controller?('goals'))]
+          .navbar-end
+            = link_to "My Progress", goal_progresses_path, class: ['navbar-item', 'is-tab', active_if(controller?('goal_progresses'))]
 
     - flash.select{|k,v| %w(notice alert).include?(k)}.each do |type, message|
       section.section
@@ -45,6 +47,3 @@ html
         ' Booster Stage
         ' &copy;
         = Date.today.year
-
-
-

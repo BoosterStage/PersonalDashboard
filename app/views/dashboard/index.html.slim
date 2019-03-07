@@ -1,0 +1,29 @@
+h1.title Your personal dashboard
+
+table.table
+  thead
+    tr
+      th Goal
+      th Monday
+      th Tuesday
+      th Wednesday
+      th Thursday
+      th Friday
+
+  tbody
+    - @goals.each do |goal|
+      tr
+        td = goal.name
+        - progresses = goal.goal_progresses.where("goal_progresses.created_at >= ?", 1.week.ago)
+        td = progresses.select { |p| p.created_at.monday? }.last.try(:achieve) || "-"
+        td = progresses.select { |p| p.created_at.tuesday? }.last.try(:achieve) || "-"
+        td = progresses.select { |p| p.created_at.wednesday? }.last.try(:achieve) || "-"
+        td = progresses.select { |p| p.created_at.thursday? }.last.try(:achieve) || "-"
+        td = progresses.select { |p| p.created_at.friday? }.last.try(:achieve) || "-"
+br
+
+ul
+  li
+    = link_to 'New Goal', new_goal_path
+  li
+    = link_to 'New Progress', new_goal_progress_path

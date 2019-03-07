@@ -4,6 +4,7 @@ table.table
   thead
     tr
       th Name
+      th Benchmark
       th
       th
       th
@@ -12,6 +13,7 @@ table.table
     - @goals.each do |goal|
       tr
         td = goal.name
+        td = goal.benchmark
         td = link_to 'Show', goal
         td = link_to 'Edit', edit_goal_path(goal)
         td = link_to 'Destroy', goal, data: { confirm: 'Are you sure?' }, method: :delete
