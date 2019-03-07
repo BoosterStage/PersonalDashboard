@@ -35,3 +35,6 @@ en:
   goals:
     form:
       save: Save Goal
+  progress_entries:
+    form:
+      save: Save Progress
