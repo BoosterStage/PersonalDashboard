@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: one
+  points: 1.5
+  entry_date: 2019-03-07
+
+two:
+  goal: two
+  points: 1.5
+  entry_date: 2019-03-07
