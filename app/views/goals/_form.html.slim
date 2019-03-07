@@ -5,6 +5,10 @@
     = f.label :name, class: 'label'
     .control= f.text_field :name, placeholder: f.object.class.human_attribute_name(:name), class: 'input'
 
+  .field
+    = f.label :benchmark, class: 'label'
+    .control= f.text_field :benchmark, placeholder: f.object.class.human_attribute_name(:amount), class: 'input'
+
   .field.is-grouped
     p.control
       = submit_tag t('.save'), class: 'button is-primary', data: {disable_with: "Saving..."}
