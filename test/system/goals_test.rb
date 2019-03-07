@@ -17,6 +17,7 @@ class GoalsTest < ApplicationSystemTestCase
     click_on 'New Goal'
 
     fill_in 'Name', with: @goal.name
+    fill_in 'Benchmark', with: @goal.benchmark
     click_on 'Save Goal'
 
     assert_text 'Goal was successfully created'
@@ -28,6 +29,7 @@ class GoalsTest < ApplicationSystemTestCase
     click_on 'Edit', match: :first
 
     fill_in 'Name', with: @goal.name
+    fill_in 'Benchmark', with: @goal.benchmark
     click_on 'Save Goal'
 
     assert_text 'Goal was successfully updated'

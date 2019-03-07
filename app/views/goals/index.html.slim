@@ -4,6 +4,8 @@ table.table
   thead
     tr
       th Name
+      - ProgressQuery.weekdays.each do |day|
+        th = day
       th
       th
       th
@@ -12,6 +14,14 @@ table.table
     - @goals.each do |goal|
       tr
         td = goal.name
+        - ProgressQuery.new(goal).week_entries.each do |entry|
+          td
+            - if entry.nil?
+              '-
+            - elsif entry.to_f >= goal.benchmark
+              span.tag.is-success = entry
+            - else
+              span.tag.is-danger = entry
         td = link_to 'Show', goal
         td = link_to 'Edit', edit_goal_path(goal)
         td = link_to 'Destroy', goal, data: { confirm: 'Are you sure?' }, method: :delete
@@ -19,3 +29,5 @@ table.table
 br
 
 = link_to 'New Goal', new_goal_path
+'|
+= link_to 'New Progress', new_progress_path

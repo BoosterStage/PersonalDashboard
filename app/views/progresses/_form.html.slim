@@ -1,0 +1,19 @@
+= form_for @progress do |f|
+  - if @progress.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@progress.errors.count, "error")} prohibited this progress from being saved:"
+      ul
+        - @progress.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :goal, class: 'label'
+    
+    .control= f.collection_select :goal_id, Goal.order(:name), :id, :name, {}, { class: 'input' }
+  .field
+    = f.label :points, class: 'label'
+    .control= f.number_field :points, placeholder: f.object.class.human_attribute_name(:points), class: 'input', step: :any
+  .field
+    = f.label :entry_date, class: 'label'
+    .control= f.date_field :entry_date, placeholder: f.object.class.human_attribute_name(:entry_date), class: 'input'
+  .actions = f.submit

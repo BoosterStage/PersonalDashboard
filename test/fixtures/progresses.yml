@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: 20 Push-ups per day
-  benchmark: 20
+  goal: one
+  points: 2
+  entry_date: 2019-03-06
 
 two:
-  name: Run 10cm per day
-  benchmark: 10
+  goal: two
+  points: 3
+  entry_date: 2019-03-07

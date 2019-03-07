@@ -1,0 +1,25 @@
+h1 Listing progresses
+
+table.table
+  thead
+    tr
+      th Goal
+      th Points
+      th Entry date
+      th
+      th
+      th
+
+  tbody
+    - @progresses.each do |progress|
+      tr
+        td = progress.goal
+        td = progress.points
+        td = progress.entry_date
+        td = link_to 'Show', progress
+        td = link_to 'Edit', edit_progress_path(progress)
+        td = link_to 'Destroy', progress, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Progress', new_progress_path
