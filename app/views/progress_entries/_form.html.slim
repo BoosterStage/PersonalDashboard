@@ -1,13 +1,16 @@
-= form_for [@goal] do |f|
+= form_for [@goal, @entry] do |f|
   = error_messages_for f.object
 
   .field
-    = f.label :name, class: 'label'
-    .control= f.text_field :name, placeholder: f.object.class.human_attribute_name(:name), class: 'input'
+    = f.label :entry_date, class: 'label'
+    .control= f.date_field :entry_date, placeholder: f.object.class.human_attribute_name(:entry_date), class: 'input'
 
   .field
-    = f.label :benchmark, class: 'label'
-    .control= f.text_field :benchmark, placeholder: f.object.class.human_attribute_name(:amount), class: 'input'
+    = f.label :amount, class: 'label'
+    .control= f.text_field :amount, placeholder: f.object.class.human_attribute_name(:amount), class: 'input'
+
+  .field
+    = f.hidden_field :goal_id, value: @goal.id
 
   .field.is-grouped
     p.control
